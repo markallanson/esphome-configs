@@ -1,6 +1,9 @@
 esphome:
   name: boiler-temperature-monitor
 
->>: !include shared-nodemcu-32.yaml
->>: !include shared.yaml
+packages:
+  esp32: !include shared-nodemcu-32.yaml
+  wifi: !include shared-wifi.yaml
+
+<<: !include shared.yaml
 
