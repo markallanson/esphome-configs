@@ -1,0 +1,6 @@
+# common nodemcu configuration shared between all devices
+esp32:
+  board: nodemcu-32s
+  framework:
+     type: arduino
+

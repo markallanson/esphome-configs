@@ -1,0 +1,15 @@
+# Common non-board specific configurations
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret hass_password
+
+ota:
+  password: !secret ota_update_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
