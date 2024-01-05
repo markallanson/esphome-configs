@@ -6,4 +6,4 @@ packages:
   wifi: !include shared-wifi.yaml
 
 <<: !include shared.yaml
-
+<<: !include default-sensors.yaml
