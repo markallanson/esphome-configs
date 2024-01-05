@@ -7,3 +7,12 @@ packages:
 
 <<: !include shared.yaml
 <<: !include default-sensors.yaml
+
+dallas:
+  - pin: 23
+
+sensor:
+  - platform: dallas
+    address: "0x9a00000015b6a628"
+    name: "Radiator Flow Temperature"
+
