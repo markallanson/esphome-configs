@@ -1,4 +1,4 @@
-# A set of default ESP sensors to include with any node.
+# A set of default ESP32 sensors to include with any node.
 
 sensor:
   - platform: wifi_signal

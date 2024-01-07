@@ -4,7 +4,7 @@ esphome:
 packages:
   esp32: !include shared-nodemcu-32.yaml
   wifi: !include shared-wifi.yaml
-  sensor: !include default-sensors.yaml
+  sensor: !include default-esp32-sensors.yaml
 
 <<: !include shared.yaml
 
