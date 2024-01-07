@@ -4,9 +4,9 @@ esphome:
 packages:
   esp32: !include shared-nodemcu-32.yaml
   wifi: !include shared-wifi.yaml
+  sensor: !include default-sensors.yaml
 
 <<: !include shared.yaml
-<<: !include default-sensors.yaml
 
 dallas:
   - pin: 23
@@ -15,4 +15,7 @@ sensor:
   - platform: dallas
     address: "0x9a00000015b6a628"
     name: "Radiator Flow Temperature"
+  - platform: dallas
+    address: "0x5100000017c49c28"
+    name: "Radiator Return Temperature"
 

@@ -12,7 +12,7 @@ I am managing (I don't envisage doing a lot of devices so may never get there).
 ## Shared Configurations
 * `default-sensors.yaml` contains a set of default sensors I want present on all devices. 
 * `shared-nodemcu-32.yaml` contains default NodeMCU ESP32 configuration shared across all such devices.
-* `shared-wifi.yaml` contains default wifi configuration for all devices.
+* `shared-wifi.yaml` contains default WiFi configuration for all devices.
 * `shared.yaml` contains other miscellaneous shared configuration to apply to all devices.
 
 ## The Nodes
