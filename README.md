@@ -6,9 +6,6 @@ I split out as much configuration as I can into separate configuration files to 
 configuration files as light as possible. These shared configuration files are included in the node 
 specific files. I also use packages a bit as well. 
 
-I have not yet started using substitutions yet but may also do this once I expand the number of devices
-I am managing (I don't envisage doing a lot of devices so may never get there).
- 
 ## Shared Configurations
 * `default-sensors.yaml` contains a set of default sensors I want present on all devices. 
 * `shared-nodemcu-32.yaml` contains default NodeMCU ESP32 configuration shared across all such devices.

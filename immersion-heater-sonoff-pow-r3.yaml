@@ -1,0 +1,86 @@
+# Immersion heater switch - a Sonoff POWR3 which runs an esp8266
+# 
+# This is used to provide automation control to a UK hot water cylinders
+# immersion heater - primarily to make use of octopus energy plunge pricing
+# to heat the hot water cylinder.
+
+substitutions:
+  friendly_name: Immersion Heather Switch
+
+esphome:
+  name: immersion-heater
+  friendly_name: ${friendly_name}
+
+esp8266:
+  board: esp8285
+
+packages:
+  wifi: !include shared-wifi.yaml
+  sensor: !include default-esp8285-sensors.yaml
+
+<<: !include shared.yaml
+
+time:
+  - platform: homeassistant
+    timezone: Europe/London
+
+#GPIO0 Button (inverted)
+#GPIO12 Relay and Red LED
+#GPIO13 Blue LED (inverted)
+
+uart:
+  rx_pin: RX
+  baud_rate: 4800
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "${friendly_name} Button"
+    on_press:
+      - switch.toggle: fakebutton
+
+switch:
+  - platform: template
+    name: "${friendly_name} Relay"
+    optimistic: true
+    id: fakebutton
+    turn_on_action:
+    - switch.turn_on: relay
+    - light.turn_on: led
+    turn_off_action:
+    - switch.turn_off: relay
+    - light.turn_off: led
+  - platform: gpio
+    id: relay
+    inverted: yes
+    pin: GPIO12
+    restore_mode: RESTORE_DEFAULT_ON
+
+output:
+  - platform: esp8266_pwm
+    id: pow_blue_led
+    pin:
+      number: GPIO13
+      inverted: True
+
+light:
+  - platform: monochromatic
+    name: "${friendly_name} Blue LED"
+    output: pow_blue_led
+    id: led
+    internal: true
+
+sensor:
+  - platform: cse7766
+    update_interval: 2s
+    current:
+      name: "${friendly_name} Current"
+    voltage:
+      name: "${friendly_name} Voltage"
+    power:
+      name: "${friendly_name} Power"
+    energy:
+      name: "${friendly_name} Energy"
