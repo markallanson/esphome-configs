@@ -73,6 +73,9 @@ light:
     id: led
     internal: true
 
+dallas:
+  - pin: GPIO4
+
 sensor:
   - platform: cse7766
     update_interval: 2s
@@ -84,3 +87,7 @@ sensor:
       name: "${friendly_name} Power"
     energy:
       name: "${friendly_name} Energy"
+
+  - platform: dallas
+    address: "0x5100000017c49c28"
+    name: "${friendly_name} Temperature"
