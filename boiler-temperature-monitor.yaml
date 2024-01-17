@@ -14,8 +14,20 @@ dallas:
 sensor:
   - platform: dallas
     address: "0x9a00000015b6a628"
-    name: "Radiator Flow Temperature"
+    name: "Cold Inlet Flow Temperature"
   - platform: dallas
-    address: "0x5100000017c49c28"
+    address: "0xdd00000018f2e528"
+    name: "Upstairs Hot Flow Temperature"
+  - platform: dallas
+    address: "0x49000000197b5a28"
+    name: "Radiator Flow Temperature" 
+  - platform: dallas
+    address: "0x3d00000016c0b128"
     name: "Radiator Return Temperature"
-
+  - platform: dallas
+    address: "0x38000000192aba28"
+    name: "Hot Water Cylinder Flow Temperature" 
+  - platform: dallas
+    address: "0x5200000016a13228"
+    name: "Hot Water Cylinder Return Temperature"
+ 
