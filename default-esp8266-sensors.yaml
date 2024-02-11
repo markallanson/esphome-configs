@@ -1,0 +1,18 @@
+# A set of default ESP8285 sensors to include with any node.
+
+sensor:
+  - platform: wifi_signal
+    name: "Node WiFi Signal Strength"
+    update_interval: 60s
+
+  - platform: uptime
+    name: "Node Uptime"
+    update_interval: 60s
+
+text_sensor:
+  - platform: version
+    name: "Node ESPHome Version"
+
+  - platform: wifi_info
+    ip_address:
+      name: "Node IP Address"
