@@ -5,7 +5,7 @@
 # to heat the hot water cylinder.
 
 substitutions:
-  friendly_name: Immersion Heather Switch
+  friendly_name: Immersion Heater Switch
 
 esphome:
   name: immersion-heater
