@@ -14,14 +14,19 @@ specific files. I also use packages a bit as well.
 
 ## The Nodes
 
-### boiler-temperature-monitor (Work in progress)
+### Boiler Temperature Monitor
 This device is simply a collection of Dallas temperature sensors for reading temperate information related
 to my heating and hot water system, it records temperatures for:
 
 * Radiator flow and return.
 * Hot water cylinder (unvented) flow and return.
 * Cold water inlet temperature
-* Under floor heating loop overall flow and return temperature (not individual loop temperatures, I may do a 
-  separate node for recording those).
+* Upstairs hot water flow temperature
 
-I may also do an overall boiler flow and return temperature (because, why not, while I am here).
+
+### Immersion Heater Switch
+This is an ESPHome config for the Shelly POW R3. I added a Dallas Temperature sensor to one of the free
+pins to record the temperature in the loft space where the hot water cylinder (tank) is located.
+
+You can use this as the basis for any Shell POW R3 configuration by just removing the dallas temperature
+sensor.
